@@ -20,6 +20,12 @@ app.use(cors({
     origin:["http://localhost:5173" , "http://localhost:5174"], // Update this to your frontend's URL
     credentials: true, // This allows cookies to be sent with requests
 }))
+app.get('/',(req,res)=>{
+    res,.send({
+       activeStatus:true,
+        error:false,
+    })
+}
 
 app.use("/api/auth", authRoutes)
 app.use("/api/user", userRoutes)
